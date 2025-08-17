@@ -182,3 +182,15 @@ footer {
     gap: 5px;
   }
 }
+/* Ensure all links match theme colors */
+a {
+  color: var(--accent);  /* uses your accent color (light enough for dark background) */
+  text-decoration: none;  /* optional: removes underline */
+}
+
+a:hover {
+  color: #b0aaff;  /* slightly lighter on hover */
+  text-decoration: underline;  /* optional hover effect */
+}
+
+
