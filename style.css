@@ -192,5 +192,16 @@ a:hover {
   color: #b0aaff;  /* slightly lighter on hover */
   text-decoration: underline;  /* optional hover effect */
 }
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+body.light {
+  background-color: white;
+  color: black;
+}
+
+
 
 
