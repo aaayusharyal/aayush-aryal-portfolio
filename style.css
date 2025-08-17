@@ -1,0 +1,184 @@
+/* Dark theme colors */
+:root {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --accent: #8a80ff;
+  --muted: #777;
+  --border: #333;
+}
+
+/* Light theme overrides */
+body.light-theme {
+  --bg: #ffffff;
+  --text: #121212;
+  --accent: #5a4fff;
+  --muted: #555;
+  --border: #ccc;
+}
+
+/* Base & Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+  font-size: 17px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Headings */
+h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: var(--muted);
+  margin-top: 0.3em;
+  margin-bottom: 1.8em;
+  font-style: italic;
+}
+
+/* Name + Theme Toggle Container */
+.name-toggle {
+  display: flex;
+  justify-content: space-between; /* name left, toggle right */
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+/* Theme toggle button styling */
+.theme-btn {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--accent);
+  transition: color 0.3s;
+}
+
+.theme-btn:hover {
+  color: #b0aaff;
+}
+
+/* Nav */
+nav {
+  margin-bottom: 2em;
+}
+nav a {
+  text-decoration: none;
+  color: var(--accent);
+  margin-right: 18px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+nav a:last-child {
+  margin-right: 0;
+}
+nav a:hover {
+  color: #b0aaff;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1.4em;
+}
+p strong {
+  color: var(--accent);
+}
+p em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Section divider */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3em 0;
+}
+
+/* Philosophy section */
+.philosophy {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+/* Social links */
+details {
+  margin-top: 2.5em;
+  cursor: pointer;
+  color: var(--accent);
+}
+details summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+details[open] summary::after {
+  content: "▲";
+  float: right;
+  font-size: 0.9rem;
+  margin-left: 8px;
+}
+details summary::after {
+  content: "▼";
+  float: right;
+  font-size: 0.9rem;
+  margin-left: 8px;
+}
+details ul {
+  margin-top: 0.8em;
+  padding-left: 1.3em;
+  color: var(--text);
+}
+details ul li {
+  margin-bottom: 0.6em;
+}
+details ul li a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+details ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 5em;
+  user-select: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 450px) {
+  body {
+    padding: 0 12px;
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  nav a {
+    margin-right: 12px;
+    font-size: 0.95rem;
+  }
+
+  .name-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
