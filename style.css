@@ -27,29 +27,32 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 700px;
-  margin: 20px auto; /* reduced margin for mobile */
-  padding: 0 15px;
+  width: 95%;            /* fluid width */
+  max-width: 700px;      /* still constrained on large screens */
+  margin: 0 auto;        /* center horizontally */
+  padding: 20px 0;       /* minimal padding */
   line-height: 1.6;
-  font-size: 17px;
+  font-size: 16px;
   transition: background 0.3s, color 0.3s;
 }
 
 /* Headings */
 h1 {
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 0.5em;
   letter-spacing: 0.05em;
+  text-align: center;
 }
 
 h2 {
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--muted);
   margin-top: 0.3em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   font-style: italic;
+  text-align: center;
 }
 
 /* Name + Theme Toggle Container */
@@ -58,8 +61,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5em;
-  flex-wrap: wrap; /* allow wrapping on small screens */
-  gap: 5px; /* small gap for mobile */
+  flex-wrap: wrap;
 }
 
 /* Theme toggle button styling */
@@ -76,10 +78,11 @@ h2 {
 
 /* Nav */
 nav {
-  margin-bottom: 2em;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* gap between links */
+  justify-content: center; /* center on all screens */
+  gap: 12px;
+  margin-bottom: 2em;
 }
 nav a {
   text-decoration: none;
@@ -93,7 +96,8 @@ nav a:hover {
 
 /* Paragraphs */
 p {
-  margin-bottom: 1.2em;
+  margin-bottom: 1em;
+  word-break: break-word; /* ensures long text wraps nicely */
 }
 p strong {
   color: var(--accent);
@@ -115,6 +119,7 @@ hr {
 .philosophy {
   font-size: 1rem;
   color: var(--text);
+  text-align: justify; /* better readability on small screens */
 }
 
 /* Social links */
@@ -165,48 +170,7 @@ footer {
   user-select: none;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  body {
-    padding: 0 12px;
-    font-size: 16px;
-    margin: 10px auto;
-  }
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.2rem;
-  }
-  nav {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding: 0 10px;
-    font-size: 15px;
-    margin: 5px auto;
-  }
-  h1 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 1.1rem;
-  }
-  nav a {
-    margin-right: 8px;
-    font-size: 0.9rem;
-  }
-  .name-toggle {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3px;
-  }
-}
-
-/* Ensure all links match theme colors */
+/* Links */
 a {
   color: var(--accent);
   text-decoration: none;
@@ -215,4 +179,52 @@ a {
 a:hover {
   color: #b0aaff;
   text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  body {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    width: 95%;
+    font-size: 15px;
+    padding: 15px 0;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+  nav {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  .name-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }
