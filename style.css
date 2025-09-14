@@ -143,6 +143,7 @@ details ul {
 }
 details ul li {
   margin-bottom: 0.6em;
+  list-style-type: none;
 }
 details ul li a {
   color: var(--accent);
